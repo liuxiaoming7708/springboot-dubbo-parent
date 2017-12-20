@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.payease</groupId>
+	<artifactId>springboot-dubbo-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>springboot-dubbo-api</module>
+		<module>springboot-dubbo-provide</module>
+		<module>springboot-dubbo-consume</module>
+	</modules>
+
+	<name>springboot-dubbo-parent</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<!-- zookeeper&dubbo-->
+		<com.alibaba.dubbo.version>2.4.10</com.alibaba.dubbo.version>
+		<org.apache.zookeeper.version>3.4.6</org.apache.zookeeper.version>
+		<com.github.sgroschupf.zkclict.version>0.1</com.github.sgroschupf.zkclict.version>
+		<commons.codec.version>1.10</commons.codec.version>
+	</properties>
+
+
+	<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons.lang.version}</version>
+		</dependency>
+		<!-- zookeeper&dubbo-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba</groupId>-->
+			<!--<artifactId>dubbo</artifactId>-->
+			<!--<version>${com.alibaba.dubbo.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.zookeeper</groupId>-->
+			<!--<artifactId>zookeeper</artifactId>-->
+			<!--<version>${org.apache.zookeeper.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.github.sgroschupf</groupId>-->
+			<!--<artifactId>zkclient</artifactId>-->
+			<!--<version>${com.github.sgroschupf.zkclict.version}</version>-->
+		<!--</dependency>-->
+
+	</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<!--打包防止分类报错-->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<!--<version>${maven-compiler.version}</version>-->
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<!--<compilerArguments>-->
+					<!--<verbose />-->
+					<!--&lt;!&ndash;<bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>&ndash;&gt;-->
+					<!--</compilerArguments>-->
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+</project>
